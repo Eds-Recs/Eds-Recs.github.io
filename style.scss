@@ -17,33 +17,30 @@ html{
         color: $textColor;
     }
 
-    overflow-x: hidden;
+    overflow: visible;
 }
 
 body{
     padding: 5px 5px 0 5px;
-    overflow: hidden;
+    //overflow: hidden;
     margin:0;
     height:100%;
 }
 
 .wrapper{
-    padding-bottom:5px;
-    position: relative;
-    display: grid;
-    margin:auto; 
-    width:85%;
-    height:100%;
-    grid-template-areas: 
-    "top top top"
-    "left mid right";
-    grid-template-columns: 1.5fr .25fr 1fr;
-    grid-template-rows: 50px auto;  
+    //background-color: red;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    margin:auto;
+    margin-bottom:50px;
+    padding-top:5%;
 }
 
 .pageTitle{
     display: block;
     margin:auto;
+    padding-bottom:5%;
     img{
         display: block;
         max-height:50px;
@@ -123,13 +120,15 @@ h2{
     justify-content: space-around;
     margin:auto;
     color: $secondaryColor;
-    width:100%;
+    //width:100%;
+    //background-color:red;
 
 }
 
 .display-playlist{
     iframe{
         //width:50px;
+        margin:auto;
         height:450px;
     }
 }
@@ -146,6 +145,7 @@ h2{
 
 .lineMarks span:before,
 .lineMarks span:after {
+    //visibility: hidden;
     content: "";
     position: absolute;
     height: 5px;
@@ -195,55 +195,182 @@ h2{
 
 }
 
-@media only screen and (max-width:841px){
+@media only screen and (min-width:841px){
 
-    html, body{
-        overflow: visible;
+    html{
+        overflow: hidden;
+        //background-color: royalblue;
+    }
+
+    body{
+        display: flex;
+        flex-flow: column nowrap;
+        //background-color: lime;
+
     }
     
     .wrapper{
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: flex-start;
-        margin:auto;
-        margin-bottom:50px;
-        padding-top:15%;
+        grid-area:wrapper;
+        //background-color: silver;
+        display: grid;
+        grid-template-areas:
+        "title title"
+        "albums playlist";
+        grid-template-columns: 800px 400px;
+        margin:0 auto;
+        padding:0;
+        max-width: 100%;
+        border-top: 1px solid grey;
+    }
+
+    .support_artists{
+        //display: none;
+        width:100%;
+        padding:0;
     }
 
     .pageTitle{
-        order: 1;
+        grid-area:pageTitle;
+        display: block;
+        //background-color: red;
+        grid-area:title;
         margin:0 auto 0 auto;
-        height: 75px;
+        //height: 75px;
     }
 
-    .topFour{
-        order:2;
-        margin-bottom: 10px;
-        height:150%;
+    .lineMarks {
+        display:block;
+        line-height: 10%;
+        text-align: center;
+        background-color:$mainColor;
+        //padding-bottom:5%;
+    }
+
+    .lineMarks span {
+        display: inline-block;
+        position: relative;
+    }
+
+    .lineMarks span:before,
+    .lineMarks span:after {
+        visibility: hidden;
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-bottom: 1px solid $textColor;
+        top: -1%;
+        width: 100px;
+    }
+
+    .lineMarks span:before {
+        right: 90%;
+        margin-right: 12px;
+    }
+
+    .lineMarks span:after {
+        left: 90%;
+        margin-left: 12px;
+    }
+
+    .display-playlist{
+        display:flex;
+        flex-flow:column;
+        //background-color: yellow;
+        grid-area:albums;
+        margin-top:0;
+        //margin-bottom: 10px;
+        height:400px;
+        border: 2px solid black;
+        width: 100%;
         h2 {
             text-align: center;
+            background-color: $mainColor;
+        }
+        iframe {
+            //width:50px;
+            margin: auto;
+            height: 450px;
         }
     }
 
     .playlist{
-        order:3;
+        position: relative;
+        display: flex;
+        //background-color: violet;
+        grid-area:playlist;
+        margin-top:0;
         //margin:50px auto 100px auto;
         text-align: center;
+        height:100%;
+        width:85%;
         h2{
             text-align: center;
         }
         iframe{
+            height:400px;
             width:100%;
         }
     }
 
+    .larger-text{
+        font-size:1em;
+    }
+
+    .topFour {
+        position: relative;
+        //background-color: yellow;
+        grid-area: albums;
+        margin-top: 0;
+        height: 100%;
+        width: 100%;
+        border-right: 1px solid grey;
+        h2 {
+            text-align: center;
+            background-color: $mainColor;
+        }
+    }
+
+    .albumCovers {
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 46% 46%;
+        grid-gap: 5px;
+        justify-content: normal;
+        padding-right:15px;
+        width:95%;
+        height:95%;
+        //border-right:1px solid black;
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+    }
+
     .box{
-        padding-bottom: 15px;
+        //grid-area: auto;
+        //position: absolute;
+        display:flex;
+        //width:fit-content;
+        height:100%;
+        width:100%;
+        padding:0;
+        //box-shadow: none;
         a{
             color: $textColor;
         }
         a:visited {
             color: $textColor;
         }
+        img{
+            padding-left:12px;
+            max-height:175px;
+            margin:auto;
+        }
+    }
+
+    .footer{
+        display: none;
     }
 }

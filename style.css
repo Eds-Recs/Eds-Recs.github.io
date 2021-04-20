@@ -4,7 +4,7 @@ html {
   background-position: 50% 100%, 50% 35%, 50% 95%, 50% 20%;
   background-size: 400px, 150px, 250px, 150px, 150px;
   background-repeat: no-repeat;
-  overflow-x: hidden;
+  overflow: visible;
 }
 html h2 {
   color: #EC526f;
@@ -16,26 +16,23 @@ html a, html a:visited {
 
 body {
   padding: 5px 5px 0 5px;
-  overflow: hidden;
   margin: 0;
   height: 100%;
 }
 
 .wrapper {
-  padding-bottom: 5px;
-  position: relative;
-  display: grid;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
   margin: auto;
-  width: 85%;
-  height: 100%;
-  grid-template-areas: "top top top" "left mid right";
-  grid-template-columns: 1.5fr 0.25fr 1fr;
-  grid-template-rows: 50px auto;
+  margin-bottom: 50px;
+  padding-top: 5%;
 }
 
 .pageTitle {
   display: block;
   margin: auto;
+  padding-bottom: 5%;
 }
 .pageTitle img {
   display: block;
@@ -108,10 +105,10 @@ h2 {
   justify-content: space-around;
   margin: auto;
   color: #EC526f;
-  width: 100%;
 }
 
 .display-playlist iframe {
+  margin: auto;
   height: 450px;
 }
 
@@ -169,54 +166,161 @@ h2 {
   max-height: 25px;
 }
 
-@media only screen and (max-width: 841px) {
-  html, body {
-    overflow: visible;
+@media only screen and (min-width: 841px) {
+  html {
+    overflow: hidden;
+  }
+
+  body {
+    display: flex;
+    flex-flow: column nowrap;
   }
 
   .wrapper {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: flex-start;
-    margin: auto;
-    margin-bottom: 50px;
-    padding-top: 15%;
+    grid-area: wrapper;
+    display: grid;
+    grid-template-areas: "title title" "albums playlist";
+    grid-template-columns: 800px 400px;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+    border-top: 1px solid grey;
+  }
+
+  .support_artists {
+    width: 100%;
+    padding: 0;
   }
 
   .pageTitle {
-    order: 1;
+    grid-area: pageTitle;
+    display: block;
+    grid-area: title;
     margin: 0 auto 0 auto;
-    height: 75px;
   }
 
-  .topFour {
-    order: 2;
-    margin-bottom: 10px;
-    height: 150%;
-  }
-  .topFour h2 {
+  .lineMarks {
+    display: block;
+    line-height: 10%;
     text-align: center;
+    background-color: #D3D4D9;
+  }
+
+  .lineMarks span {
+    display: inline-block;
+    position: relative;
+  }
+
+  .lineMarks span:before,
+.lineMarks span:after {
+    visibility: hidden;
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-bottom: 1px solid #272635;
+    top: -1%;
+    width: 100px;
+  }
+
+  .lineMarks span:before {
+    right: 90%;
+    margin-right: 12px;
+  }
+
+  .lineMarks span:after {
+    left: 90%;
+    margin-left: 12px;
+  }
+
+  .display-playlist {
+    display: flex;
+    flex-flow: column;
+    grid-area: albums;
+    margin-top: 0;
+    height: 400px;
+    border: 2px solid black;
+    width: 100%;
+  }
+  .display-playlist h2 {
+    text-align: center;
+    background-color: #D3D4D9;
+  }
+  .display-playlist iframe {
+    margin: auto;
+    height: 450px;
   }
 
   .playlist {
-    order: 3;
+    position: relative;
+    display: flex;
+    grid-area: playlist;
+    margin-top: 0;
     text-align: center;
+    height: 100%;
+    width: 85%;
   }
   .playlist h2 {
     text-align: center;
   }
   .playlist iframe {
+    height: 400px;
     width: 100%;
   }
 
+  .larger-text {
+    font-size: 1em;
+  }
+
+  .topFour {
+    position: relative;
+    grid-area: albums;
+    margin-top: 0;
+    height: 100%;
+    width: 100%;
+    border-right: 1px solid grey;
+  }
+  .topFour h2 {
+    text-align: center;
+    background-color: #D3D4D9;
+  }
+
+  .albumCovers {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 46% 46%;
+    grid-gap: 5px;
+    justify-content: normal;
+    padding-right: 15px;
+    width: 95%;
+    height: 95%;
+  }
+  .albumCovers p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 0;
+  }
+
   .box {
-    padding-bottom: 15px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 0;
   }
   .box a {
     color: #272635;
   }
   .box a:visited {
     color: #272635;
+  }
+  .box img {
+    padding-left: 12px;
+    max-height: 175px;
+    margin: auto;
+  }
+
+  .footer {
+    display: none;
   }
 }
 
