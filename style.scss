@@ -209,14 +209,14 @@ h2{
             linear-gradient($mainColor, #E3CCB5);
 
         background-position: 
-            85% 80%,
-            15% 95%,
+            85% 95%,
+            15% 100%,
             93% 35%,
             60% 20%,
             20% 15%;
         background-size: 
             700px,
-            75px,
+            50px,
             200px,
             150px,
             100px,
@@ -373,32 +373,32 @@ h2{
         }
     }
 
-    .footer{
-        position: relative;
-        bottom:0;
-        left:0;
-        display: grid;
-        grid-template-areas: "spacer logo logo instagram";
-        grid-template-columns: 1fr 2fr 1fr;
+    // .footer{
+    //     position: relative;
+    //     bottom:0;
+    //     left:0;
+    //     display: grid;
+    //     grid-template-areas: "spacer logo logo instagram";
+    //     grid-template-columns: 1fr 2fr 1fr;
 
-        margin-right: 5%;
+    //     margin-right: 5%;
 
-        .logo {
-            margin: auto;
-            grid-area: logo;
+    //     .logo {
+    //         margin: auto;
+    //         grid-area: logo;
 
-            img {
-                max-height: 100px;
-            }
-        }
+    //         img {
+    //             max-height: 100px;
+    //         }
+    //     }
 
-        .insta {
-            grid-area: instagram;
-            margin: auto;
+    //     .insta {
+    //         grid-area: instagram;
+    //         margin: auto;
 
-            img {
-                max-height: 25px;
-            }
-        }
-    }
+    //         img {
+    //             max-height: 25px;
+    //         }
+    //     }
+    // }
 }

@@ -172,8 +172,8 @@ h2 {
     height: 100%;
     overflow: hidden;
     background-image: url(images/shapes_1_no_border.png), url(images/shapes_2.png), url(images/shapes_3.png), url(images/shapes_4.png), url(images/shapes_5.png), linear-gradient(#D3D4D9, #E3CCB5);
-    background-position: 85% 80%, 15% 95%, 93% 35%, 60% 20%, 20% 15%;
-    background-size: 700px, 75px, 200px, 150px, 100px, 1500px;
+    background-position: 85% 95%, 15% 100%, 93% 35%, 60% 20%, 20% 15%;
+    background-size: 700px, 50px, 200px, 150px, 100px, 1500px;
   }
 
   body {
@@ -303,30 +303,6 @@ h2 {
     padding-left: 12px;
     max-height: 175px;
     margin: auto;
-  }
-
-  .footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    display: grid;
-    grid-template-areas: "spacer logo logo instagram";
-    grid-template-columns: 1fr 2fr 1fr;
-    margin-right: 5%;
-  }
-  .footer .logo {
-    margin: auto;
-    grid-area: logo;
-  }
-  .footer .logo img {
-    max-height: 100px;
-  }
-  .footer .insta {
-    grid-area: instagram;
-    margin: auto;
-  }
-  .footer .insta img {
-    max-height: 25px;
   }
 }
 
