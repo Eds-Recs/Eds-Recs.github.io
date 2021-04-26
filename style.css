@@ -4,6 +4,7 @@ html {
   background-position: 50% 100%, 50% 35%, 50% 95%, 50% 20%;
   background-size: 400px, 150px, 250px, 150px, 150px;
   background-repeat: no-repeat;
+  font-family: "Forum", cursive;
   overflow: visible;
 }
 html h2 {
@@ -44,8 +45,7 @@ body {
 h2 {
   text-align: left;
   font-size: 2em;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 10px auto 0 auto;
 }
 
 .support_artists {
@@ -74,6 +74,7 @@ h2 {
 
 .larger-text {
   font-size: 1.2em;
+  font-weight: bold;
 }
 
 .box {
@@ -166,9 +167,13 @@ h2 {
   max-height: 25px;
 }
 
-@media only screen and (min-width: 841px) {
+@media only screen and (min-width: 841px) and (max-width: 1300px) {
   html {
+    height: 100%;
     overflow: hidden;
+    background-image: url(images/shapes_1_no_border.png), url(images/shapes_2.png), url(images/shapes_3.png), url(images/shapes_4.png), url(images/shapes_5.png), linear-gradient(#D3D4D9, #E3CCB5);
+    background-position: 85% 80%, 15% 95%, 93% 35%, 60% 20%, 20% 15%;
+    background-size: 700px, 75px, 200px, 150px, 100px, 1500px;
   }
 
   body {
@@ -176,34 +181,38 @@ h2 {
     flex-flow: column nowrap;
   }
 
+  h2 {
+    margin: auto;
+  }
+
   .wrapper {
     grid-area: wrapper;
     display: grid;
-    grid-template-areas: "title title" "albums playlist";
+    grid-template-areas: "titleOne titleTwo" "albums playlist";
     grid-template-columns: 800px 400px;
+    grid-template-rows: 0.1fr 450px;
     margin: 0 auto;
     padding: 0;
-    max-width: 100%;
-    border-top: 1px solid grey;
+    max-width: 90%;
+    max-height: 70%;
   }
 
   .support_artists {
-    width: 100%;
-    padding: 0;
+    display: none;
   }
 
   .pageTitle {
-    grid-area: pageTitle;
     display: block;
     grid-area: title;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
+    padding: 2% 0;
   }
 
   .lineMarks {
     display: block;
-    line-height: 10%;
+    line-height: 10px;
     text-align: center;
-    background-color: #D3D4D9;
+    font-family: "Forum", cursive;
   }
 
   .lineMarks span {
@@ -213,13 +222,11 @@ h2 {
 
   .lineMarks span:before,
 .lineMarks span:after {
-    visibility: hidden;
     content: "";
     position: absolute;
     height: 5px;
-    border-bottom: 1px solid #272635;
-    top: -1%;
-    width: 100px;
+    border-bottom: 1px solid #9D9FAA;
+    width: 500px;
   }
 
   .lineMarks span:before {
@@ -232,37 +239,17 @@ h2 {
     margin-left: 12px;
   }
 
-  .display-playlist {
-    display: flex;
-    flex-flow: column;
-    grid-area: albums;
-    margin-top: 0;
-    height: 400px;
-    border: 2px solid black;
-    width: 100%;
-  }
-  .display-playlist h2 {
-    text-align: center;
-    background-color: #D3D4D9;
-  }
-  .display-playlist iframe {
-    margin: auto;
-    height: 450px;
-  }
-
   .playlist {
     position: relative;
     display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
     grid-area: playlist;
     margin-top: 0;
-    text-align: center;
-    height: 100%;
-    width: 85%;
-  }
-  .playlist h2 {
-    text-align: center;
+    height: 400px;
   }
   .playlist iframe {
+    padding-top: 25px;
     height: 400px;
     width: 100%;
   }
@@ -273,25 +260,23 @@ h2 {
 
   .topFour {
     position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
     grid-area: albums;
     margin-top: 0;
-    height: 100%;
-    width: 100%;
-    border-right: 1px solid grey;
-  }
-  .topFour h2 {
-    text-align: center;
-    background-color: #D3D4D9;
+    height: 400px;
+    border-right: 1px solid #9D9FAA;
   }
 
   .albumCovers {
     position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 46% 46%;
     grid-gap: 5px;
     justify-content: normal;
     padding-right: 15px;
+    padding-top: 25px;
     width: 95%;
     height: 95%;
   }
@@ -306,6 +291,7 @@ h2 {
     height: 100%;
     width: 100%;
     padding: 0;
+    margin: 0;
   }
   .box a {
     color: #272635;
@@ -320,7 +306,27 @@ h2 {
   }
 
   .footer {
-    display: none;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-areas: "spacer logo logo instagram";
+    grid-template-columns: 1fr 2fr 1fr;
+    margin-right: 5%;
+  }
+  .footer .logo {
+    margin: auto;
+    grid-area: logo;
+  }
+  .footer .logo img {
+    max-height: 100px;
+  }
+  .footer .insta {
+    grid-area: instagram;
+    margin: auto;
+  }
+  .footer .insta img {
+    max-height: 25px;
   }
 }
 
