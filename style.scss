@@ -195,7 +195,7 @@ h2{
 
 }
 
-@media only screen and (min-width:841px) and (max-width:1300px){
+@media only screen and (min-width:841px){ //and (max-width:1300px){
 
     html{
         height:100%;
@@ -220,7 +220,7 @@ h2{
             200px,
             150px,
             100px,
-            1500px;
+            100%;
     }
 
     body{

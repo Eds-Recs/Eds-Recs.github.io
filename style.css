@@ -167,13 +167,13 @@ h2 {
   max-height: 25px;
 }
 
-@media only screen and (min-width: 841px) and (max-width: 1300px) {
+@media only screen and (min-width: 841px) {
   html {
     height: 100%;
     overflow: hidden;
     background-image: url(images/shapes_1_no_border.png), url(images/shapes_2.png), url(images/shapes_3.png), url(images/shapes_4.png), url(images/shapes_5.png), linear-gradient(#D3D4D9, #E3CCB5);
     background-position: 85% 95%, 15% 100%, 93% 35%, 60% 20%, 20% 15%;
-    background-size: 700px, 50px, 200px, 150px, 100px, 1500px;
+    background-size: 700px, 50px, 200px, 150px, 100px, 100%;
   }
 
   body {
