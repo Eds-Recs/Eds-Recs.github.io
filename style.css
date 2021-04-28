@@ -305,5 +305,19 @@ h2 {
     margin: auto;
   }
 }
+@media only screen and (min-width: 1320px) {
+  html {
+    height: 100%;
+    overflow: hidden;
+    background-image: url(images/shapes_1_no_border.png), url(images/shapes_2.png), url(images/shapes_3.png), url(images/shapes_4.png), url(images/shapes_5.png), linear-gradient(#D3D4D9, #E3CCB5);
+    background-position: 60% 60%, 25% 63%, 75% 22%, 55% 18%, 30% 15%;
+    background-size: 700px, 50px, 200px, 150px, 100px, 100%;
+  }
+
+  .footer {
+    max-width: 90%;
+    grid-template-columns: auto auto auto;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
