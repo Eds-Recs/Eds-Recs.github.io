@@ -322,8 +322,6 @@ h2 {
   }
 
   .wrapper {
-    grid-template-columns: 800px 400px;
-    grid-template-rows: 0.1fr 100px;
     margin: 5% auto;
     padding: 0;
     max-width: 100%;
@@ -332,7 +330,6 @@ h2 {
 
   .footer {
     position: absolute;
-    background-color: #EC526f;
     bottom: 0;
     width: 100%;
     grid-template-columns: auto auto auto;
