@@ -152,17 +152,24 @@ h2{
 }
 
 .footer{
+    // background-color: yellow;
     position: relative;
-    bottom:0;
+    bottom:10px;
     left:0;
     display: grid;
-    grid-template-areas: "spacer logo logo instagram";
+    grid-template-areas: "spacer logo instagram";
     grid-template-columns: 1fr 2fr 1fr;
+    // grid-template-rows: 1fr;
 
     margin-right: 5%;
+    padding:15px 0 10px 0;
     .logo{
-        margin:auto;
+        // margin:auto;
         grid-area: logo;
+        position: absolute;
+        left:35%;
+        // top:-25%;
+        bottom: 5%;
         img{
         max-height: 65px;
         }
@@ -170,7 +177,7 @@ h2{
 
     .insta{
         grid-area:instagram;
-        margin:auto;
+        margin:auto auto 0 auto;
         img{
         max-height: 25px;
         }
@@ -194,7 +201,7 @@ h2{
         background-position: 
             85% 95%,
             15% 100%,
-            93% 35%,
+            94% 35%,
             60% 20%,
             20% 15%;
         background-size: 
@@ -256,9 +263,12 @@ h2{
     .lineMarks span:after {
         content: "";
         position: absolute;
-        height: 5px;
-        border-bottom: 1px solid #9D9FAA;
+        height: 0px;
+        //border-bottom: 1px solid #9D9FAA;
+        // border:1px;
         width: 500px;
+        background-color: #555862;
+        margin-top:4px;
     }
 
     .lineMarks span:before {
@@ -299,7 +309,7 @@ h2{
         grid-area: albums;
         margin-top: 0;
         height: 400px;
-        border-right:1px solid #9D9FAA;
+        border-right:1px solid #555862;
     }
 
     .albumCovers {
@@ -334,8 +344,46 @@ h2{
         img{
             padding-left:12px;
             max-height:175px;
+            max-width:175px;
             margin:auto;
         }
+    }
+
+    .footer {
+        // background-color: yellow;
+        position: relative;
+        bottom: -3%;
+        left: 0;
+        display: grid;
+        grid-template-areas: "spacer logo instagram";
+        grid-template-columns: 1fr 2fr 1fr;
+        // grid-template-rows: 1fr;
+
+        margin-right: 5%;
+        padding: 25px 0 0 0;
+
+        .logo {
+            // margin:auto;
+            grid-area: logo;
+            position: absolute;
+            left: 35%;
+            // top:-25%;
+            bottom: 5%;
+
+            img {
+                max-height: 50px;
+            }
+        }
+
+        .insta {
+            grid-area: instagram;
+            margin: auto auto 0 auto;
+
+            img {
+                max-height: 25px;
+            }
+        }
+
     }
 }
 
@@ -382,7 +430,7 @@ h2{
 
     .footer{
         position: absolute;
-        bottom:0;
+        bottom:2%;
         width: 100%;
         grid-template-columns: auto auto auto;
     }
